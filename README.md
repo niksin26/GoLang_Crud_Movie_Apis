@@ -18,22 +18,26 @@ A simple RESTful API built with Go (Golang) for managing a movie collection. Thi
 ## 🛠️ Installation
 
 1. Clone the repository:
+
 ```bash
 git clone git@github.com-personal:niksin26/GoLang_Crud_Movie_Apis.git
 cd GoLang_Crud_Movie_Apis
 ```
 
 2. Install dependencies:
+
 ```bash
 go mod download
 ```
 
 3. Run the application:
+
 ```bash
 go run main.go
 ```
 
 The server will start on port 8000 with the message:
+
 ```
 Starting server at port 8000
 ```
@@ -51,74 +55,47 @@ GoLang_Crud_Movie_Apis/
 ## 🔗 API Endpoints
 
 ### Base URL
+
 ```
 http://localhost:8000
 ```
 
 ### Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/movies` | Get all movies |
-| GET | `/movies/{id}` | Get a specific movie by ID |
-| POST | `/movies` | Create a new movie |
-| PUT | `/movies/{id}` | Update an existing movie |
-| DELETE | `/movies/{id}` | Delete a movie |
+| Method | Endpoint       | Description                |
+| ------ | -------------- | -------------------------- |
+| GET    | `/movies`      | Get all movies             |
+| GET    | `/movies/{id}` | Get a specific movie by ID |
+| POST   | `/movies`      | Create a new movie         |
+| PUT    | `/movies/{id}` | Update an existing movie   |
+| DELETE | `/movies/{id}` | Delete a movie             |
 
 ## 📝 API Documentation
 
 ### 1. Get All Movies
+
 **Endpoint:** `GET /movies`
 
-**Response:**
-```json
-[
-  {
-    "id": "1",
-    "isbn": "123456",
-    "title": "Movie One",
-    "director": {
-      "firstname": "John",
-      "lastname": "Doe"
-    }
-  },
-  {
-    "id": "2",
-    "isbn": "123457",
-    "title": "Movie Two",
-    "director": {
-      "firstname": "Nikhil",
-      "lastname": "Kumar"
-    }
-  }
-]
-```
+**Example:** `GET /movies`
 
 **Screenshot:**
-![Get All Movies](images/get-all-movies.png)
+![Get All Movies](https://github.com/user-attachments/assets/9d86d914-02c0-4a3d-9113-d05bb31a825e)
 
 ### 2. Get Movie by ID
+
 **Endpoint:** `GET /movies/{id}`
 
 **Example:** `GET /movies/1`
 
-**Response:**
-```json
-{
-  "id": "1",
-  "isbn": "123456",
-  "title": "Movie One",
-  "director": {
-    "firstname": "John",
-    "lastname": "Doe"
-  }
-}
-```
+**Screenshot:**
+![Get Movie by ID](https://github.com/user-attachments/assets/72a28591-ea49-41a6-9d42-54e0aac8052e)
 
 ### 3. Create a New Movie
+
 **Endpoint:** `POST /movies`
 
 **Request Body:**
+
 ```json
 {
   "isbn": "123458",
@@ -130,25 +107,17 @@ http://localhost:8000
 }
 ```
 
-**Response:**
-```json
-{
-  "id": "random_generated_id",
-  "isbn": "123458",
-  "title": "New Movie",
-  "director": {
-    "firstname": "Jane",
-    "lastname": "Smith"
-  }
-}
-```
+**Screenshot:**
+![Create New Movie](https://github.com/user-attachments/assets/a3fd0001-5a61-44a6-bf82-86255a7bc5c4)
 
 ### 4. Update a Movie
+
 **Endpoint:** `PUT /movies/{id}`
 
 **Example:** `PUT /movies/1`
 
 **Request Body:**
+
 ```json
 {
   "isbn": "123456",
@@ -160,28 +129,34 @@ http://localhost:8000
 }
 ```
 
-**Response:** Returns the updated movie object
+**Screenshot:**
+![Update Movie](https://github.com/user-attachments/assets/6dec9f8e-0865-42d2-9ac6-4394f71979ef)
 
 ### 5. Delete a Movie
+
 **Endpoint:** `DELETE /movies/{id}`
 
 **Example:** `DELETE /movies/1`
 
-**Response:** Returns the remaining movies list
+**Screenshot:**
+![Delete Movie](https://github.com/user-attachments/assets/6fcc57e3-c8a4-41de-974d-64e2286d3156)
 
 ## 💻 Testing with cURL
 
 ### Get all movies
+
 ```bash
 curl http://localhost:8000/movies
 ```
 
 ### Get a specific movie
+
 ```bash
 curl http://localhost:8000/movies/1
 ```
 
 ### Create a new movie
+
 ```bash
 curl -X POST http://localhost:8000/movies \
   -H "Content-Type: application/json" \
@@ -196,6 +171,7 @@ curl -X POST http://localhost:8000/movies \
 ```
 
 ### Update a movie
+
 ```bash
 curl -X PUT http://localhost:8000/movies/1 \
   -H "Content-Type: application/json" \
@@ -210,6 +186,7 @@ curl -X PUT http://localhost:8000/movies/1 \
 ```
 
 ### Delete a movie
+
 ```bash
 curl -X DELETE http://localhost:8000/movies/1
 ```
@@ -217,6 +194,7 @@ curl -X DELETE http://localhost:8000/movies/1
 ## 🗃️ Data Models
 
 ### Movie Structure
+
 ```go
 type Movie struct {
     ID       string    `json:"id"`
@@ -227,6 +205,7 @@ type Movie struct {
 ```
 
 ### Director Structure
+
 ```go
 type Director struct {
     FirstName string `json:"firstname"`
