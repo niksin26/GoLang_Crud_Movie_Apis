@@ -76,70 +76,42 @@ http://localhost:8000
 
 **Endpoint:** `GET /movies`
 
-**Example:** `GET /movies`
-
 **Screenshot:**
+
 ![Get All Movies](https://github.com/user-attachments/assets/9d86d914-02c0-4a3d-9113-d05bb31a825e)
 
 ### 2. Get Movie by ID
 
 **Endpoint:** `GET /movies/{id}`
 
-**Example:** `GET /movies/1`
-
 **Screenshot:**
+
 ![Get Movie by ID](https://github.com/user-attachments/assets/72a28591-ea49-41a6-9d42-54e0aac8052e)
 
 ### 3. Create a New Movie
 
 **Endpoint:** `POST /movies`
 
-**Request Body:**
-
-```json
-{
-  "isbn": "123458",
-  "title": "New Movie",
-  "director": {
-    "firstname": "Jane",
-    "lastname": "Smith"
-  }
-}
-```
-
 **Screenshot:**
+
 ![Create New Movie](https://github.com/user-attachments/assets/a3fd0001-5a61-44a6-bf82-86255a7bc5c4)
 
 ### 4. Update a Movie
 
 **Endpoint:** `PUT /movies/{id}`
 
-**Example:** `PUT /movies/1`
-
-**Request Body:**
-
-```json
-{
-  "isbn": "123456",
-  "title": "Updated Movie Title",
-  "director": {
-    "firstname": "John",
-    "lastname": "Updated"
-  }
-}
-```
-
 **Screenshot:**
+
 ![Update Movie](https://github.com/user-attachments/assets/6dec9f8e-0865-42d2-9ac6-4394f71979ef)
 
 ### 5. Delete a Movie
 
 **Endpoint:** `DELETE /movies/{id}`
 
-**Example:** `DELETE /movies/1`
-
 **Screenshot:**
+
 ![Delete Movie](https://github.com/user-attachments/assets/6fcc57e3-c8a4-41de-974d-64e2286d3156)
+
 
 ## 💻 Testing with cURL
 
